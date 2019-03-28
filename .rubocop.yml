@@ -1,0 +1,71 @@
+AllCops:
+  Exclude:
+    - 'app/views/*'
+    - 'bin/*'
+    - 'cache/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'db/data/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+  TargetRubyVersion: 2.4
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - config/initializers/*
+    - config/routes.rb
+    - db/seeds.rb
+
+Style/Documentation:
+  Enabled: false
+
+Layout/IndentHash:
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_braces
+  IndentationWidth: 4
+
+Layout/IndentArray:
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_braces
+  IndentationWidth: 4
+  Exclude:
+    - config/spring.rb
+
+Style/BlockComments:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - indented
+    - indented_relative_to_receiver
+  # By default, the indentation width from Style/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: 4
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'config/environments/*.rb'
+    - 'config/routes.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Metrics/MethodLength:
+  Max: 12
