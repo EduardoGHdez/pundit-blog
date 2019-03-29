@@ -15,7 +15,8 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      return scope.where(published: true).or(user.posts) if user.writer?
+      return scope.all if user.moderator?
     end
   end
 end
